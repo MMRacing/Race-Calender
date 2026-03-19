@@ -1,4 +1,4 @@
-<img align="left" src="https://github.com/MMRacing/Race-Calender/blob/740f82f94219d53592127d2f585a4600591ea0e1/Race-Cal-InfoSmall.jpg">
+<img align="left" src="https://github.com/MMRacing/Race-Calender/blob/5194f00b48419db2f067ef9bca2edc250cec30be/Race-Cal-InfoSmallNew.jpg">
 ### 🏁 Race Calendar
 Race Calendar is a stripped-down, high-speed motorsport tracker built for people who actually care about the racing—not the noise around it. Riders, builders, and fans get a clear line of sight into the season without wading through corporate sludge.
 It pulls together race events from MotoGP, Formula 1, WorldSBK, TT, and BSB, laying them out in a clean, ruthless format—dates, locations, and series filtering—everything you need, nothing you don’t.
