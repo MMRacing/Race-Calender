@@ -1,0 +1,218 @@
+Upgrade my existing racing calendar web app.
+
+IMPORTANT:
+Use ONLY plain HTML, CSS, and vanilla JavaScript.
+
+Do NOT use:
+React
+Vue
+Next.js
+npm
+frameworks
+or build tools.
+
+The project must remain a simple static website.
+
+------------------------------------------------
+
+PROJECT STRUCTURE
+
+The project must look like this:
+
+index.html
+style.css
+script.js
+races.js
+tracks/
+
+------------------------------------------------
+
+GOAL
+
+Each race card must show a circuit outline image on the right side.
+
+The track images will be PNG files stored inside the "tracks" folder.
+
+------------------------------------------------
+
+TRACK IMAGE RULES
+
+Track images must:
+
+• be PNG files
+• have transparent backgrounds
+• be white line track outlines
+• be approximately 400–500px resolution
+• be displayed scaled down in the UI
+
+Example file names:
+
+tracks/albert_park.png
+tracks/bahrain.png
+tracks/jeddah.png
+tracks/suzuka.png
+tracks/silverstone.png
+tracks/monza.png
+tracks/portimao.png
+tracks/assen.png
+tracks/mugello.png
+tracks/misano.png
+tracks/donington.png
+tracks/phillip_island.png
+
+------------------------------------------------
+
+RACE DATA STRUCTURE
+
+In races.js, every race object must include a "track" field.
+
+Example:
+
+{
+series: "F1",
+race: "Australian Grand Prix",
+circuit: "Albert Park",
+date: "2026-03-15",
+track: "tracks/albert_park.png"
+}
+
+Update all race entries to include track image paths.
+
+------------------------------------------------
+
+RACE CARD LAYOUT
+
+Each race card must have:
+
+LEFT SIDE
+- race date
+- race name
+- circuit name
+
+RIGHT SIDE
+- track outline PNG
+
+Example structure:
+
+<div class="race-card">
+
+  <div class="race-info">
+    <div class="race-date">Mar 15 2026</div>
+    <div class="race-name">Australian Grand Prix</div>
+    <div class="race-circuit">Albert Park</div>
+  </div>
+
+  <div class="track-outline">
+    <img src="tracks/albert_park.png">
+  </div>
+
+</div>
+
+------------------------------------------------
+
+STYLE REQUIREMENTS
+
+Create a motorsport dashboard style UI.
+
+Dark background
+Clean modern typography
+Rounded race cards
+Good spacing
+Subtle shadows
+
+Race card layout should use flexbox.
+
+Track image styling:
+
+.track-outline img {
+width: 90px;
+opacity: 0.9;
+}
+
+------------------------------------------------
+
+SERIES COLOUR CODING
+
+F1 = red
+MotoGP = blue
+WSBK = green
+
+------------------------------------------------
+
+FEATURES THAT MUST REMAIN
+
+Do NOT remove these features:
+
+• Next Race panel
+• Automatic next race detection
+• Filter buttons (All / F1 / MotoGP / WSBK)
+• Race grouping by series
+
+------------------------------------------------
+
+NEXT RACE LOGIC
+
+script.js must:
+
+1. Load races from races.js
+2. Compare race dates with today's date
+3. Find the nearest upcoming race
+4. Display it in the NEXT RACE panel
+
+------------------------------------------------
+
+CREATE TRACK IMAGE PLACEHOLDERS
+
+Inside the tracks folder create placeholder PNG files for:
+
+albert_park.png
+bahrain.png
+jeddah.png
+suzuka.png
+shanghai.png
+miami.png
+monaco.png
+barcelona.png
+montreal.png
+silverstone.png
+monza.png
+lusail.png
+portimao.png
+termas.png
+jerez.png
+lemans.png
+mugello.png
+assen.png
+sachsenring.png
+valencia.png
+phillip_island.png
+misano.png
+donington.png
+most.png
+magny_cours.png
+aragon.png
+
+These can be simple placeholder images with white line shapes.
+
+------------------------------------------------
+
+CODE COMMENTS
+
+Add comments explaining:
+
+• where to add new track images
+• how the race data references the images
+• how to change tracks for a race
+
+------------------------------------------------
+
+FINAL RESULT
+
+The app must run immediately in Replit as a static site and display:
+
+Next Race panel
+F1 races
+MotoGP races
+WorldSBK races
+
+Each race card must display its circuit outline PNG on the right side.

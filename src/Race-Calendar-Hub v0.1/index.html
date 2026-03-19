@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GridCalendar — by MM Racing</title>
+    <link rel="stylesheet" href="style.css?v=12" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Russo+One&family=Oswald:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="poster">
+      <header>
+        <img src="logoB&WYell.png" alt="MM Racing" class="header-logo" />
+        <div class="header-year">2026</div>
+        <div class="header-title">RACING <span>CALENDAR</span></div>
+        <div class="header-sub">GridCalendar by MM Racing</div>
+      </header>
+
+      <section class="next-race-panel" id="next-race-panel">
+        <h2>NEXT RACE</h2>
+        <div id="next-race-content"></div>
+      </section>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">
+          <span class="filter-icon">◎</span>
+          <span class="filter-label">ALL</span>
+        </button>
+        <button class="filter-btn" data-filter="F1">
+          <span class="filter-icon">🏎</span>
+          <span class="filter-label">F1</span>
+        </button>
+        <button class="filter-btn" data-filter="MotoGP">
+          <span class="filter-icon">🏍</span>
+          <span class="filter-label">MOTOGP</span>
+        </button>
+        <button class="filter-btn" data-filter="WSBK">
+          <span class="filter-icon">🏍</span>
+          <span class="filter-label">WSBK</span>
+        </button>
+        <button class="filter-btn" data-filter="IOMTT">
+          <span class="filter-icon">🇮🇲</span>
+          <span class="filter-label">IOM TT</span>
+        </button>
+        <button class="filter-btn" data-filter="BSB">
+          <span class="filter-icon">🏍</span>
+          <span class="filter-label">BSB</span>
+        </button>
+      </div>
+
+      <section class="series-block" id="section-f1">
+        <h2 class="series-heading f1-heading">FORMULA 1</h2>
+        <div class="race-list" id="grid-f1"></div>
+      </section>
+
+      <section class="series-block" id="section-motogp">
+        <h2 class="series-heading motogp-heading">MOTOGP</h2>
+        <div class="race-list" id="grid-motogp"></div>
+      </section>
+
+      <section class="series-block" id="section-wsbk">
+        <h2 class="series-heading wsbk-heading">WORLDSBK</h2>
+        <div class="race-list" id="grid-wsbk"></div>
+      </section>
+
+      <section class="series-block" id="section-iomtt">
+        <h2 class="series-heading iomtt-heading">ISLE OF MAN TT</h2>
+        <div class="race-list" id="grid-iomtt"></div>
+      </section>
+
+      <section class="series-block" id="section-bsb">
+        <h2 class="series-heading bsb-heading">BRITISH SUPERBIKE</h2>
+        <div class="race-list" id="grid-bsb"></div>
+      </section>
+
+      <footer>
+        <p>Your motorsport season at a glance</p>
+      </footer>
+    </div>
+
+    <script src="races.js?v=12"></script>
+    <script src="script.js?v=12"></script>
+  </body>
+</html>

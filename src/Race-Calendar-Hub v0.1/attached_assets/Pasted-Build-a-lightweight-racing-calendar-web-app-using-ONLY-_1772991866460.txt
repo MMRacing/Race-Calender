@@ -1,0 +1,171 @@
+Build a lightweight racing calendar web app using ONLY:
+
+HTML
+CSS
+Vanilla JavaScript
+
+DO NOT use:
+React
+Next.js
+Vue
+npm packages
+frameworks
+or build tools.
+
+The app must run as a simple static website.
+
+Project structure must be exactly:
+
+index.html
+style.css
+script.js
+races.js
+
+-----------------------------------
+
+APP PURPOSE
+
+Create a motorsport dashboard that displays the race calendars for:
+
+• Formula 1
+• MotoGP
+• World Superbike (WorldSBK)
+
+-----------------------------------
+
+PAGE LAYOUT
+
+Top section:
+
+A large dashboard card called:
+
+NEXT RACE
+
+This panel must automatically display the next upcoming race from all three series.
+
+Show:
+
+Series
+Race Name
+Circuit
+Date
+Countdown in days
+
+Example:
+
+NEXT RACE
+
+MotoGP
+Qatar GP
+Lusail Circuit
+March 8 2026
+
+In 5 days
+
+-----------------------------------
+
+Below the next race panel show three sections:
+
+FORMULA 1
+MOTOGP
+WORLD SUPERBIKE
+
+Each section contains race cards.
+
+Each race card shows:
+
+Date
+Race Name
+Circuit
+
+-----------------------------------
+
+COLOUR CODING
+
+Use these colours:
+
+F1 = Red
+MotoGP = Blue
+WSBK = Green
+
+-----------------------------------
+
+DESIGN STYLE
+
+Dark racing dashboard style.
+
+Requirements:
+
+Dark background
+Clean motorsport look
+Rounded cards
+Simple grid layout
+Responsive for phones
+
+Cards should have subtle shadows and spacing.
+
+-----------------------------------
+
+FILTER BUTTONS
+
+At the top add buttons:
+
+All
+F1
+MotoGP
+WSBK
+
+Clicking filters which races are shown.
+
+-----------------------------------
+
+RACE DATA
+
+All race data must be stored in:
+
+races.js
+
+The races.js file exports a variable called:
+
+races
+
+Example structure:
+
+const races = [
+{
+series: "F1",
+race: "Australian Grand Prix",
+circuit: "Albert Park",
+date: "2026-03-15"
+}
+];
+
+-----------------------------------
+
+NEXT RACE LOGIC
+
+In script.js:
+
+1. Load the race data
+2. Compare each race date with today's date
+3. Find the nearest upcoming race
+4. Display it in the NEXT RACE panel
+
+If all races are past show:
+
+Season Completed
+
+-----------------------------------
+
+CODE QUALITY
+
+Add comments explaining:
+
+• where to edit race dates
+• how the next race logic works
+
+The site must run immediately in Replit without any setup.
+
+-----------------------------------
+
+Also generate the races.js file with sample 2026 race data so the app works immediately.

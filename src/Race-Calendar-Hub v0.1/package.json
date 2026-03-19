@@ -1,0 +1,8 @@
+{
+  "name": "gridcalendar",
+  "version": "1.0.0",
+  "description": "MM Racing GridCalendar - 2026 Motorsport Season",
+  "scripts": {
+    "build": "echo 'Static site - no build needed'"
+  }
+}

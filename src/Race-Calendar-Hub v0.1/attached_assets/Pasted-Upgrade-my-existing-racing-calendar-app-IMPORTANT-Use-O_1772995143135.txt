@@ -1,0 +1,200 @@
+Upgrade my existing racing calendar app.
+
+IMPORTANT:
+Use ONLY plain HTML, CSS, and vanilla JavaScript.
+Do NOT use React, Vue, Next.js, npm packages, frameworks, or build tools.
+
+Keep the app as a static site with this structure:
+
+index.html
+style.css
+script.js
+races.js
+tracks/
+
+GOAL
+
+I want the race cards to use real circuit-outline SVG files, one per track, stored in the /tracks folder.
+
+Do NOT generate random fake circuit shapes.
+Instead, update the app so it expects proper SVG files with the exact filenames listed below.
+
+If a circuit SVG is missing, show a simple fallback placeholder box with the circuit name.
+
+==================================================
+1. UPDATE races.js
+==================================================
+
+Each race object must include a `track` property that points to the correct SVG file in /tracks.
+
+Use this exact structure:
+
+{
+  series: "F1",
+  race: "Australian Grand Prix",
+  circuit: "Albert Park",
+  date: "2026-03-15",
+  track: "tracks/albert_park.svg"
+}
+
+Update all race entries to use the correct track filenames.
+
+Use these filenames:
+
+F1:
+tracks/bahrain.svg
+tracks/jeddah.svg
+tracks/albert_park.svg
+tracks/miami.svg
+tracks/monza.svg
+tracks/silverstone.svg
+tracks/suzuka.svg
+tracks/singapore.svg
+tracks/abu_dhabi.svg
+
+MotoGP:
+tracks/portimao.svg
+tracks/termas_rio_hondo.svg
+tracks/jerez.svg
+tracks/mugello.svg
+tracks/assen.svg
+tracks/silverstone.svg
+tracks/catalunya.svg
+tracks/buriram.svg
+tracks/valencia.svg
+
+WorldSBK:
+tracks/phillip_island.svg
+tracks/estoril.svg
+tracks/misano.svg
+tracks/donington.svg
+tracks/most.svg
+tracks/magny_cours.svg
+tracks/portimao.svg
+
+==================================================
+2. UPDATE THE RENDERING
+==================================================
+
+In script.js, each race card must render:
+
+- left side = date, race name, circuit
+- right side = SVG circuit outline image
+
+Use:
+
+<img src="${race.track}" alt="${race.circuit} circuit outline" loading="lazy">
+
+If the image fails to load, replace it with a fallback element:
+<div class="track-fallback">TRACK</div>
+
+==================================================
+3. STYLING
+==================================================
+
+Keep the motorsport dashboard style:
+- dark background
+- rounded cards
+- red accents for F1
+- blue accents for MotoGP
+- green accents for WSBK
+
+Race cards should look premium and compact.
+
+Add/keep CSS like:
+
+.track-outline {
+  width: 96px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.track-outline img {
+  max-width: 92px;
+  max-height: 58px;
+  width: auto;
+  height: auto;
+  display: block;
+  opacity: 0.95;
+}
+
+.track-fallback {
+  width: 92px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.65);
+}
+
+==================================================
+4. DO NOT GENERATE BAD SVGs
+==================================================
+
+Do not invent fake or abstract circuit paths.
+
+Instead, set the project up to use proper SVG files already placed in /tracks.
+
+Create empty placeholder files only if needed, but make the app ready for accurate replacement SVGs.
+
+==================================================
+5. TRACK FILE CHECKLIST
+==================================================
+
+Expect these files in /tracks:
+
+bahrain.svg
+jeddah.svg
+albert_park.svg
+miami.svg
+monza.svg
+silverstone.svg
+suzuka.svg
+singapore.svg
+abu_dhabi.svg
+portimao.svg
+termas_rio_hondo.svg
+jerez.svg
+mugello.svg
+assen.svg
+catalunya.svg
+buriram.svg
+valencia.svg
+phillip_island.svg
+estoril.svg
+misano.svg
+donington.svg
+most.svg
+magny_cours.svg
+
+==================================================
+6. KEEP EXISTING FEATURES
+==================================================
+
+Do not break:
+- Next Race panel
+- date-based next race calculation
+- filter buttons
+- grouped series sections
+
+==================================================
+7. COMMENTS
+==================================================
+
+Add comments explaining:
+- where SVG files go
+- how race.track links to the SVG
+- how to add new tracks later
+
+==================================================
+8. FINAL RESULT
+==================================================
+
+The app must run immediately as a plain HTML/CSS/JS site.
+It must support real SVG track files and show them on the right side of each race card.

@@ -1,0 +1,522 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Oswald:wght@400;600;700&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-color: #0a0a0a;
+  --panel-bg: #111111;
+  --text-main: #f0f0f0;
+  --text-muted: #777;
+  --f1-color: #e10600;
+  --f1-glow: rgba(225, 6, 0, 0.15);
+  --motogp-color: #0077cc;
+  --motogp-glow: rgba(0, 119, 204, 0.15);
+  --wsbk-color: #00a651;
+  --wsbk-glow: rgba(0, 166, 81, 0.15);
+  --iomtt-color: #f5a623;
+  --iomtt-glow: rgba(245, 166, 35, 0.15);
+  --bsb-color: #7c3aed;
+  --bsb-glow: rgba(124, 58, 237, 0.15);
+  --row-hover: rgba(255, 255, 255, 0.03);
+  --stripe: rgba(255, 255, 255, 0.015);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Rajdhani', 'Oswald', sans-serif;
+  background-color: #050505;
+  background-image:
+    repeating-linear-gradient(0deg, var(--stripe) 0px, var(--stripe) 1px, transparent 1px, transparent 2px),
+    repeating-linear-gradient(90deg, var(--stripe) 0px, var(--stripe) 1px, transparent 1px, transparent 2px);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+}
+
+.poster {
+  width: 100%;
+  max-width: 720px;
+  background-color: var(--bg-color);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+header {
+  text-align: center;
+  padding: 40px 20px 28px;
+  background:
+    linear-gradient(180deg, rgba(241, 251, 20, 0.08) 0%, transparent 40%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, var(--bg-color) 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--f1-color), var(--motogp-color), var(--wsbk-color));
+}
+
+.header-logo {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto 14px;
+  filter: brightness(1.1);
+}
+
+.header-year {
+  font-family: 'Russo One', sans-serif;
+  font-size: 72px;
+  font-weight: 400;
+  letter-spacing: 8px;
+  line-height: 1;
+  background: linear-gradient(180deg, #ffffff 20%, #555555 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+}
+
+.header-title {
+  font-family: 'Russo One', sans-serif;
+  font-size: 24px;
+  letter-spacing: 6px;
+  color: #ffffff;
+  margin-top: 2px;
+  text-transform: uppercase;
+}
+
+.header-title span {
+  color: var(--f1-color);
+}
+
+.header-sub {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 11px;
+  color: #555;
+  letter-spacing: 3px;
+  margin-top: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* ========== NEXT RACE PANEL ========== */
+
+.next-race-panel {
+  margin: 20px 16px 20px;
+  padding: 24px 20px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
+    var(--panel-bg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.next-race-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--text-muted);
+}
+
+.next-race-panel.F1::before {
+  background: var(--f1-color);
+}
+
+.next-race-panel.MotoGP::before {
+  background: var(--motogp-color);
+}
+
+.next-race-panel.WSBK::before {
+  background: var(--wsbk-color);
+}
+
+.next-race-panel.IOMTT::before {
+  background: var(--iomtt-color);
+}
+
+.next-race-panel.BSB::before {
+  background: var(--bsb-color);
+}
+
+.next-race-panel.multi-series::before {
+  background: linear-gradient(90deg, var(--f1-color), var(--motogp-color), var(--wsbk-color));
+}
+
+.next-race-panel h2 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 11px;
+  color: #555;
+  letter-spacing: 4px;
+  margin-bottom: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.next-race-entries {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 16px;
+}
+
+.next-race-entry {
+  flex: 1;
+  min-width: 180px;
+}
+
+.next-race-divider {
+  display: none;
+}
+
+.next-race-series {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.F1-text {
+  color: var(--f1-color);
+}
+
+.MotoGP-text {
+  color: var(--motogp-color);
+}
+
+.WSBK-text {
+  color: var(--wsbk-color);
+}
+
+.next-race-name {
+  font-family: 'Russo One', sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  line-height: 1.2;
+}
+
+.next-race-date {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 15px;
+  color: #888;
+  margin-bottom: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.next-race-countdown {
+  display: inline-block;
+  padding: 5px 18px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ========== FILTER BAR ========== */
+
+.filter-bar {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2px;
+  padding: 12px 12px;
+  background: #080808;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.filter-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 14px 4px;
+  background: #161616;
+  border: none;
+  border-top: 3px solid #2a2a2a;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.filter-btn:hover {
+  background: #1e1e1e;
+}
+
+.filter-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.filter-label {
+  font-family: 'Russo One', sans-serif;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: #555;
+  text-transform: uppercase;
+  transition: color 0.15s;
+}
+
+.filter-btn.active .filter-label,
+.filter-btn:hover .filter-label {
+  color: #ccc;
+}
+
+.filter-btn.active[data-filter="all"] {
+  border-top-color: #ffffff;
+  background: #1c1c1c;
+}
+.filter-btn.active[data-filter="all"] .filter-label { color: #fff; }
+
+.filter-btn.active[data-filter="F1"] {
+  border-top-color: var(--f1-color);
+  background: #1a0000;
+}
+.filter-btn.active[data-filter="F1"] .filter-label { color: var(--f1-color); }
+
+.filter-btn.active[data-filter="MotoGP"] {
+  border-top-color: var(--motogp-color);
+  background: #00101e;
+}
+.filter-btn.active[data-filter="MotoGP"] .filter-label { color: var(--motogp-color); }
+
+.filter-btn.active[data-filter="WSBK"] {
+  border-top-color: var(--wsbk-color);
+  background: #001509;
+}
+.filter-btn.active[data-filter="WSBK"] .filter-label { color: var(--wsbk-color); }
+
+.filter-btn.active[data-filter="IOMTT"] {
+  border-top-color: var(--iomtt-color);
+  background: #191000;
+}
+.filter-btn.active[data-filter="IOMTT"] .filter-label { color: var(--iomtt-color); }
+
+.filter-btn.active[data-filter="BSB"] {
+  border-top-color: var(--bsb-color);
+  background: #0e0820;
+}
+.filter-btn.active[data-filter="BSB"] .filter-label { color: var(--bsb-color); }
+
+/* ========== SERIES SECTIONS ========== */
+
+.series-block {
+  padding: 0 16px 20px;
+}
+
+.series-heading {
+  font-family: 'Russo One', sans-serif;
+  font-size: 22px;
+  letter-spacing: 3px;
+  padding: 14px 12px 10px;
+  margin-bottom: 0;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.series-heading::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 12px;
+  right: 12px;
+  height: 2px;
+}
+
+.f1-heading {
+  color: var(--f1-color);
+}
+
+.f1-heading::after {
+  background: linear-gradient(90deg, var(--f1-color), transparent);
+}
+
+.motogp-heading {
+  color: var(--motogp-color);
+}
+
+.motogp-heading::after {
+  background: linear-gradient(90deg, var(--motogp-color), transparent);
+}
+
+.wsbk-heading {
+  color: var(--wsbk-color);
+}
+
+.wsbk-heading::after {
+  background: linear-gradient(90deg, var(--wsbk-color), transparent);
+}
+
+.iomtt-heading {
+  color: var(--iomtt-color);
+}
+
+.iomtt-heading::after {
+  background: linear-gradient(90deg, var(--iomtt-color), transparent);
+}
+
+.bsb-heading {
+  color: var(--bsb-color);
+}
+
+.bsb-heading::after {
+  background: linear-gradient(90deg, var(--bsb-color), transparent);
+}
+
+/* ========== RACE LIST ========== */
+
+.race-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.race-row {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  gap: 8px;
+  min-height: 44px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  transition: background-color 0.15s;
+}
+
+.race-row:hover {
+  background-color: var(--row-hover);
+}
+
+.race-flag {
+  font-size: 15px;
+  flex-shrink: 0;
+  width: 22px;
+  text-align: center;
+}
+
+.race-date {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #999;
+  white-space: nowrap;
+  min-width: 50px;
+  letter-spacing: 0.5px;
+}
+
+.race-circuit {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  flex: 1;
+}
+
+/* ========== COUNTDOWN BADGES ========== */
+
+.race-countdown {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.countdown-today {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.25), rgba(255, 180, 0, 0.15));
+  color: #ffd700;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.countdown-soon {
+  background: linear-gradient(135deg, rgba(255, 140, 0, 0.2), rgba(255, 100, 0, 0.1));
+  color: #ff9500;
+  border: 1px solid rgba(255, 140, 0, 0.2);
+}
+
+.countdown-future {
+  background: rgba(255, 255, 255, 0.04);
+  color: #555;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.countdown-past {
+  background: rgba(225, 6, 0, 0.12);
+  color: #e10600;
+  border: 1px solid rgba(225, 6, 0, 0.2);
+}
+
+
+/* ========== FOOTER ========== */
+
+footer {
+  text-align: center;
+  padding: 18px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 11px;
+  color: #444;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 500px) {
+  .race-list {
+    grid-template-columns: 1fr;
+  }
+
+  .header-logo {
+    width: 80px;
+  }
+
+  .header-year {
+    font-size: 52px;
+    letter-spacing: 6px;
+  }
+
+  .header-title {
+    font-size: 18px;
+    letter-spacing: 4px;
+  }
+
+  .series-heading {
+    font-size: 18px;
+  }
+
+  .poster {
+    border: none;
+  }
+
+  body {
+    padding: 0;
+  }
+
+  .next-race-name {
+    font-size: 22px;
+  }
+}
