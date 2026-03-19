@@ -27,7 +27,7 @@ Lightweight design – no bloat, no loading nonsense
 
 This wasn’t born in a boardroom. It started as a tool to keep track of race weekends between wrenching sessions and late nights in the garage. Now it’s turning into something bigger—a proper motorsport companion for people who live this stuff, not just watch it.
 
-
+[Open it on you phone](https://race-calendar-hub.replit.app)  then add it to your homepage. 
 ## Attribution
 
 If you use or build upon this project, you must include clear credit to:
